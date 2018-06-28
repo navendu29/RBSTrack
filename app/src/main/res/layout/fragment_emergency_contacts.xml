@@ -1,0 +1,567 @@
+
+
+
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.example.navendu.rbstrack.fragments.emergencyContacts">
+
+ <android.support.v4.widget.NestedScrollView
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical"
+         >
+
+         <android.support.v7.widget.CardView
+             android:layout_width="match_parent"
+             android:layout_marginTop="10dp"
+             android:layout_height="200dp"
+             android:background="@color/colorPrimaryDark"
+             android:layout_marginBottom="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp"
+
+             android:elevation="@dimen/cardview_default_elevation">
+
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:orientation="vertical"
+                 android:layout_height="match_parent">
+
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:text="Emergency services"
+                     android:textAllCaps="true"
+                     android:textColor="@color/colorPrimaryDark"
+                     android:textSize="20dp"
+                     android:textStyle="bold"
+
+                     />
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:layout_margin="5dp"
+                     android:orientation="horizontal"
+                     >
+
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_margin="2dp"
+                         android:background="#ffffff"
+                         android:text="Police                             100"
+                         android:textStyle="bold"
+                         android:textAllCaps="true"
+                         android:textSize="15dp"
+                         android:padding="5dp"
+                         />
+
+
+
+
+                 </LinearLayout>
+
+
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:layout_margin="5dp"
+                     android:orientation="horizontal"
+                     >
+
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_margin="2dp"
+                         android:background="#ffffff"
+                         android:text="Fire                                   101"
+                         android:textStyle="bold"
+                         android:textAllCaps="true"
+                         android:textSize="15dp"
+                         android:padding="5dp"
+                         />
+
+
+
+
+                 </LinearLayout>
+
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:layout_margin="5dp"
+                     android:orientation="horizontal"
+                     >
+
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_margin="2dp"
+                         android:background="#ffffff"
+                         android:text="ambulance                  102"
+                         android:textStyle="bold"
+                         android:textAllCaps="true"
+                         android:textSize="15dp"
+                         android:padding="5dp"
+                         />
+
+
+
+
+                 </LinearLayout>
+
+
+             </LinearLayout>
+
+
+         </android.support.v7.widget.CardView>
+
+         <android.support.v7.widget.CardView
+             android:layout_width="match_parent"
+             android:layout_marginTop="10dp"
+             android:layout_height="200dp"
+             android:background="@color/colorPrimaryDark"
+             android:layout_marginBottom="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp"
+
+             android:elevation="@dimen/cardview_default_elevation"
+            >
+
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:orientation="vertical"
+                 android:layout_height="match_parent">
+
+
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="25dp"
+                     android:text="nearest hospital (DElhi)"
+
+                     android:textAllCaps="true"
+                     android:textColor="@color/colorPrimaryDark"
+                     android:textSize="20dp"
+                     android:layout_marginBottom="5dp"
+                     android:textStyle="bold"
+
+                     />
+
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:layout_margin="5dp"
+                     android:orientation="horizontal"
+                     >
+
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_margin="2dp"
+                         android:background="#ffffff"
+                         android:text="St stephen              011-23966021-27"
+                         android:textStyle="bold"
+                         android:textAllCaps="true"
+                         android:textSize="15dp"
+                         android:padding="5dp"
+                         />
+
+
+
+
+                 </LinearLayout>
+
+
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:layout_margin="5dp"
+                     android:orientation="horizontal"
+                     >
+
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_margin="2dp"
+                         android:background="#ffffff"
+                         android:text="Max Hospital         011-43033333"
+                         android:textStyle="bold"
+                         android:textAllCaps="true"
+                         android:textSize="15dp"
+                         android:padding="5dp"
+                         />
+
+
+
+
+                 </LinearLayout>
+
+
+
+
+             </LinearLayout>
+
+         </android.support.v7.widget.CardView>
+
+         <android.support.v7.widget.CardView
+             android:layout_width="match_parent"
+             android:layout_marginTop="10dp"
+             android:layout_height="200dp"
+             android:background="@color/colorPrimaryDark"
+             android:layout_marginBottom="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp"
+
+             android:elevation="@dimen/cardview_default_elevation"
+             >
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:orientation="vertical"
+                 android:layout_height="match_parent">
+
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:text="nearest hospital (gurgaon)"
+                     android:textAllCaps="true"
+                     android:textColor="@color/colorPrimaryDark"
+                     android:textSize="20dp"
+                     android:textStyle="bold"
+
+                     />
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:layout_margin="5dp"
+                     android:orientation="horizontal"
+                     >
+
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_margin="2dp"
+                         android:background="#ffffff"
+                         android:text="columbia asia                            100"
+                         android:textStyle="bold"
+                         android:textAllCaps="true"
+                         android:textSize="15dp"
+                         android:padding="5dp"
+                         />
+
+
+
+
+                 </LinearLayout>
+
+
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:layout_margin="5dp"
+                     android:orientation="horizontal"
+                     >
+
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_margin="2dp"
+                         android:background="#ffffff"
+                         android:text="Fire                                   101"
+                         android:textStyle="bold"
+                         android:textAllCaps="true"
+                         android:textSize="15dp"
+                         android:padding="5dp"
+                         />
+
+
+
+
+                 </LinearLayout>
+
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:layout_margin="5dp"
+                     android:orientation="horizontal"
+                     >
+
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_margin="2dp"
+                         android:background="#ffffff"
+                         android:text="ambulance                  102"
+                         android:textStyle="bold"
+                         android:textAllCaps="true"
+                         android:textSize="15dp"
+                         android:padding="5dp"
+                         />
+
+
+
+
+                 </LinearLayout>
+
+
+             </LinearLayout>
+
+
+
+         </android.support.v7.widget.CardView>
+
+
+         <android.support.v7.widget.CardView
+             android:layout_width="match_parent"
+             android:layout_marginTop="10dp"
+             android:layout_height="200dp"
+             android:background="@color/colorPrimaryDark"
+             android:layout_marginBottom="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp"
+
+             android:elevation="@dimen/cardview_default_elevation"
+             >
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:orientation="vertical"
+                 android:layout_height="match_parent">
+
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:text="Building Security team"
+                     android:textAllCaps="true"
+                     android:textColor="@color/colorPrimaryDark"
+                     android:textSize="20dp"
+                     android:textStyle="bold"
+
+                     />
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:layout_margin="5dp"
+                     android:orientation="horizontal"
+                     >
+
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_margin="2dp"
+                         android:background="#ffffff"
+                         android:text="Police                             100"
+                         android:textStyle="bold"
+                         android:textAllCaps="true"
+                         android:textSize="15dp"
+                         android:padding="5dp"
+                         />
+
+
+
+
+                 </LinearLayout>
+
+
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:layout_margin="5dp"
+                     android:orientation="horizontal"
+                     >
+
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_margin="2dp"
+                         android:background="#ffffff"
+                         android:text="Fire                                   101"
+                         android:textStyle="bold"
+                         android:textAllCaps="true"
+                         android:textSize="15dp"
+                         android:padding="5dp"
+                         />
+
+
+
+
+                 </LinearLayout>
+
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:layout_margin="5dp"
+                     android:orientation="horizontal"
+                     >
+
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_margin="2dp"
+                         android:background="#ffffff"
+                         android:text="ambulance                  102"
+                         android:textStyle="bold"
+                         android:textAllCaps="true"
+                         android:textSize="15dp"
+                         android:padding="5dp"
+                         />
+
+
+
+
+                 </LinearLayout>
+
+
+             </LinearLayout>
+
+
+
+
+
+         </android.support.v7.widget.CardView>
+         <android.support.v7.widget.CardView
+             android:layout_width="match_parent"
+             android:layout_marginTop="10dp"
+             android:layout_height="200dp"
+             android:background="@color/colorPrimaryDark"
+             android:layout_marginBottom="20dp"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp"
+
+             android:elevation="@dimen/cardview_default_elevation">
+             >
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:orientation="vertical"
+                 android:layout_height="match_parent">
+
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:text="Transport services"
+                     android:textAllCaps="true"
+                     android:textColor="@color/colorPrimaryDark"
+                     android:textSize="20dp"
+                     android:textStyle="bold"
+
+                     />
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:layout_margin="5dp"
+                     android:orientation="horizontal"
+                     >
+
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_margin="2dp"
+                         android:background="#ffffff"
+                         android:text="Shastri Park                          011-66054020,23"
+                         android:textStyle="bold"
+                         android:textAllCaps="true"
+                         android:textSize="15dp"
+                         android:padding="5dp"
+                         />
+
+
+
+
+                 </LinearLayout>
+
+
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:layout_margin="5dp"
+                     android:orientation="horizontal"
+                     >
+
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_margin="2dp"
+                         android:background="#ffffff"
+                         android:text="Infinity tower                      0124-4532244"
+                         android:textStyle="bold"
+                         android:textAllCaps="true"
+                         android:textSize="15dp"
+                         android:padding="5dp"
+                         />
+
+
+
+
+                 </LinearLayout>
+
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="30dp"
+                     android:layout_margin="5dp"
+                     android:orientation="horizontal"
+                     android:background="@color/colorPrimaryDark"
+                     >
+
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_margin="2dp"
+                         android:background="#ffffff"
+                         android:text="dlf 7b                                          0124-4791666,1586"
+                         android:textStyle="bold"
+                         android:textAllCaps="true"
+                         android:textSize="15dp"
+                         android:padding="5dp"
+                         />
+
+
+
+
+                 </LinearLayout>
+
+
+             </LinearLayout>
+
+         </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+     </LinearLayout>
+
+
+ </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

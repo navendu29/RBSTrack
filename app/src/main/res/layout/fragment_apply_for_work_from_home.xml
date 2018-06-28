@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+
+    tools:context="com.example.navendu.rbstrack.fragments.ApplyForWorkFromHome">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="#ffffff"
+        android:layout_margin="5dp"
+        >
+
+
+        <sun.bob.mcalendarview.MCalendarView
+            android:id="@+id/call"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_margin="5dp"
+            android:layout_marginEnd="8dp"
+
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </sun.bob.mcalendarview.MCalendarView>
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/call"
+        android:layout_alignStart="@+id/call"
+        android:layout_alignTop="@+id/editText2"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:text="REASon"
+        android:textColor="#ffffff"
+
+        android:textAllCaps="true"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/button"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="17dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+         />
+
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginBottom="30dp"
+        android:layout_toEndOf="@+id/textView"
+        android:layout_toRightOf="@+id/textView"
+        android:text="apply for leave"
+        android:id="@+id/button" />
+
+
+
+
+
+
+
+</RelativeLayout>
