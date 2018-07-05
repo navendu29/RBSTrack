@@ -2,14 +2,14 @@
 
 
 
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
 
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/nk"
     tools:context="com.example.navendu.rbstrack.fragments.emergencyContacts">
 
  <android.support.v4.widget.NestedScrollView
@@ -143,8 +143,7 @@
              android:elevation="@dimen/cardview_default_elevation"
             >
 
-             <LinearLayout
-                 android:layout_width="match_parent"
+             <LinearLayout                 android:layout_width="match_parent"
                  android:orientation="vertical"
                  android:layout_height="match_parent">
 
@@ -261,7 +260,7 @@
                          android:layout_height="match_parent"
                          android:layout_margin="2dp"
                          android:background="#ffffff"
-                         android:text="columbia asia                            100"
+                         android:text="columbia asia               100"
                          android:textStyle="bold"
                          android:textAllCaps="true"
                          android:textSize="15dp"
@@ -527,7 +526,6 @@
                      android:layout_height="30dp"
                      android:layout_margin="5dp"
                      android:orientation="horizontal"
-                     android:background="@color/colorPrimaryDark"
                      >
 
                      <TextView
@@ -564,4 +562,4 @@
  </android.support.v4.widget.NestedScrollView>
 
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

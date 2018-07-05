@@ -33,8 +33,17 @@ public class ShowPeoplOnLeaves extends Fragment {
 
         View v= inflater.inflate(R.layout.fragment_show_peopl_on_leaves, container, false);
 
+
+
+      //  getActivity().getActionBar().setTitle("SHOW PEOPLE");
+
+
         g=v.findViewById(R.id.callp);
         jj=v.getContext();
+
+
+
+
 
         g.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override

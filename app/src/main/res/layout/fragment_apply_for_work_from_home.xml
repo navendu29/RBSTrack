@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,75 +11,111 @@ android:background="@color/colorPrimaryDark"
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="0dp"
         android:background="#ffffff"
         android:layout_margin="5dp"
-        >
+        android:layout_weight="5"
+        android:id="@+id/linearLayout">
+
+<CalendarView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/call1">
+
+</CalendarView>
 
 
-        <sun.bob.mcalendarview.MCalendarView
-            android:id="@+id/call"
-            android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:layout_margin="5dp"
-            android:layout_marginEnd="8dp"
+    </LinearLayout>
 
-            android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
 
-        </sun.bob.mcalendarview.MCalendarView>
+    <LinearLayout
+        android:layout_width="match_parent"
+android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/call1"
+            android:layout_alignStart="@+id/call1"
+            android:layout_alignTop="@+id/editText2"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:text="REASon"
+            android:textColor="#ffffff"
+
+            android:textAllCaps="true"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="40dp"
+            android:layout_above="@+id/buttonb"
+            android:layout_alignEnd="@+id/linearLayout"
+            android:layout_alignRight="@+id/linearLayout"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp" />
 
 
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_alignLeft="@+id/call"
-        android:layout_alignStart="@+id/call"
-        android:layout_alignTop="@+id/editText2"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
-        android:text="REASon"
-        android:textColor="#ffffff"
 
-        android:textAllCaps="true"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:layout_marginBottom="20dp"
+    >
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_above="@+id/button"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="17dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginRight="26dp"
-         />
+    <Button
+        android:id="@+id/buttonb"
+        android:layout_width="150dp"
 
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="16dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+
+
+        android:layout_marginRight="10dp"
+
+
+        android:layout_marginStart="16dp"
+        android:text="UPDATE" />
 
     <Button
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_alignEnd="@+id/editText2"
+        android:layout_alignRight="@+id/editText2"
+        android:layout_below="@+id/editText2"
+        android:layout_marginEnd="21dp"
+        style="@style/Widget.AppCompat.Button.Colored"
 
-        android:layout_marginBottom="30dp"
-        android:layout_toEndOf="@+id/textView"
-        android:layout_toRightOf="@+id/textView"
-        android:text="apply for leave"
-        android:id="@+id/button" />
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="21dp"
+        android:id="@+id/nnt"
+        android:text="notifypeople" />
+
+
+
+
+</LinearLayout>
 
 
 
 
 
-
-
-</RelativeLayout>
+</LinearLayout>

@@ -1,27 +1,24 @@
 package com.example.navendu.rbstrack.model;
 
-import java.util.ArrayList;
-import java.util.Date;
-
 /**
- * Created by navendu on 23/6/18.
+ * Created by navendu on 3/7/18.
  */
 
-public class leaves {
-    String racf;
+public class peopleonleave {
     String date;
     String reason;
+    String what;
 
 
-    public leaves()
+    public peopleonleave()
     {}
 
-    public String getRacf() {
-        return racf;
-    }
+    public peopleonleave(String s1,String s2,String s3)
+    {
+        date=s1;
+        reason=s2;
+        what=s3;
 
-    public void setRacf(String racf) {
-        this.racf = racf;
     }
 
     public String getDate() {
@@ -40,10 +37,15 @@ public class leaves {
         this.reason = reason;
     }
 
-    public leaves(String racf)
-    {
-        this.racf=racf;
-
+    public String getWhat() {
+        return what;
     }
+
+    public void setWhat(String what) {
+        this.what = what;
+    }
+
+
+
 
 }

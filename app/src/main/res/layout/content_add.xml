@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nk"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.navendu.rbstrack.fragments.add"
+    tools:showIn="@layout/activity_add">
+
+    <EditText
+        android:id="@+id/editText1"
+
+        android:layout_width="200dp"
+
+        android:layout_height="wrap_content"
+
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/editText2"
+        android:layout_marginTop="133dp"
+        android:hint="Contact No"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:textStyle="italic" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="200dp"
+
+        android:layout_height="wrap_content"
+
+
+        android:layout_below="@+id/editText1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:hint="Name"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/rr"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/editText2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="76dp"
+        android:text="add" />
+
+</RelativeLayout>

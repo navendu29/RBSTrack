@@ -24,6 +24,7 @@ import com.example.navendu.rbstrack.fragments.ContactsFragment;
 import com.example.navendu.rbstrack.fragments.ProfileFragment;
 import com.example.navendu.rbstrack.fragments.ShowPeoplOnLeaves;
 import com.example.navendu.rbstrack.fragments.emergencyContacts;
+import com.example.navendu.rbstrack.fragments.myabsence;
 
 public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,10 +36,14 @@ public class Main2Activity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+
+
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+ /*       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,7 +51,7 @@ public class Main2Activity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
-
+*/
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -178,6 +183,15 @@ public class Main2Activity extends AppCompatActivity
 
 
         }
+        else if(id==R.id.nav)
+        {
+            Fragment fragment = new myabsence();
+            FragmentManager manager = getSupportFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.frame, fragment);
+            transaction.commit();
+
+        }
         else
         {
             Fragment fragment = new ShowPeoplOnLeaves();
@@ -189,6 +203,7 @@ public class Main2Activity extends AppCompatActivity
 
 
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

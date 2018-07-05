@@ -3,12 +3,16 @@ package com.example.navendu.rbstrack.services;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.navendu.rbstrack.R;
 import com.example.navendu.rbstrack.model.Datesss;
 import com.example.navendu.rbstrack.model.Employee;
+import com.example.navendu.rbstrack.model.peopleonleave;
+
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -20,6 +24,11 @@ public class Main3Activity extends AppCompatActivity {
 
 
     TextView kk;
+    ArrayList<peopleonleave> arr;
+    ListView v;
+
+    customadapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,11 +38,23 @@ public class Main3Activity extends AppCompatActivity {
 
         String datek=i.getStringExtra("hehe");
 
-    kk=findViewById(R.id.lll);
+    kk=findViewById(R.id.tty);
+
+
     kk.setText(datek);
 
+      //  this.getActionBar().setTitle("DETAILS");
 
-        final String BASE_URL = "http://192.168.1.7:8081/";
+
+        v=findViewById(R.id.kk);
+
+
+        arr=new ArrayList<peopleonleave>();
+
+
+
+
+        final String BASE_URL = "http://192.168.43.154:8081/";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -49,10 +70,28 @@ public class Main3Activity extends AppCompatActivity {
 
                 Datesss b=response.body();
 
-                kk.setText(b.getRacf()+""+b.getReason()+"");
+
+                v=findViewById(R.id.kk);
 
 
 
+
+               String[] h1= b.getRacf().split(",");
+                String[] h2= b.getReason().split(",");
+                String[] h3= b.getWL().split(",");
+
+
+
+                for(int i=0;i<h1.length;++i)
+                {
+                    arr.add(new peopleonleave(h1[i],h2[i],h3[i]));
+
+                }
+
+
+                adapter= new customadapter(arr,getApplicationContext());
+
+                v.setAdapter(adapter);
 
 
             }

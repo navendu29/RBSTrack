@@ -29,7 +29,13 @@ public class emergencyContacts extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_emergency_contacts, container, false);
+        View v= inflater.inflate(R.layout.fragment_emergency_contacts, container, false);
+
+
+        //getActivity().getWindow().ActionBar().setTitle("EMERGENCY CONTACTS");
+
+
+        return v;
     }
 
 }

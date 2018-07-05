@@ -3,57 +3,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/nk"
     tools:context="com.example.navendu.rbstrack.fragments.ContactsFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
-   <ListView
-       android:layout_width="match_parent"
-       android:layout_height="300dp"
-
-       android:id="@+id/recyclerView"
-
-       ></ListView>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-
-    ></LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
 
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/recyclerView"
-        android:layout_alignStart="@+id/recyclerView"
-        android:layout_below="@+id/recyclerView"
-        android:layout_marginLeft="36dp"
-        android:textColor="#ffffff"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+
+        android:layout_height="400dp"
+        android:id="@+id/linearLayout3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:textAllCaps="true"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+
+                android:text="NAME"
+                android:paddingLeft="30dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:text="contact"
+
+
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:paddingLeft="30dp"
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
+
+
+        <ListView
+
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+           android:layout_margin="5dp"
+
+
+            android:id="@+id/recyclerView"
+
+            ></ListView>
+
+
+    </LinearLayout>
 
 
     <Button
         android:id="@+id/rr"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_alignBaseline="@+id/editText"
-        android:layout_alignBottom="@+id/editText"
-        android:layout_marginLeft="23dp"
-        android:layout_marginStart="23dp"
-        android:layout_toEndOf="@+id/editText"
-        android:layout_toRightOf="@+id/editText"
-        android:text="add "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        android:layout_below="@+id/linearLayout3"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="add" />
 
 </RelativeLayout>

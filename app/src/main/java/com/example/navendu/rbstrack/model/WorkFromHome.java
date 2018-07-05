@@ -10,16 +10,37 @@ import java.util.Date;
 public class WorkFromHome {
 
     String racf;
-    ArrayList<String> dates;
-    ArrayList<String> reason;
+    String dates;
+    String reasons;
 
     public WorkFromHome()
     {}
     public WorkFromHome(String racf)
     {
         this.racf=racf;
-        dates=new ArrayList<String>();
-        reason=new ArrayList<String>();
     }
 
+    public String getRacf() {
+        return racf;
+    }
+
+    public void setRacf(String racf) {
+        this.racf = racf;
+    }
+
+    public String getDates() {
+        return dates;
+    }
+
+    public void setDates(String dates) {
+        this.dates = dates;
+    }
+
+    public String getReasons() {
+        return reasons;
+    }
+
+    public void setReasons(String reasons) {
+        this.reasons = reasons;
+    }
 }

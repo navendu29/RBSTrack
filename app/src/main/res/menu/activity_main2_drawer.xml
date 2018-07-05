@@ -33,6 +33,11 @@
             android:title="show people on leave/WFH" />
 
 
+        <item
+            android:id="@+id/nav"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="MY absence" />
+
     </group>
 
     <item android:title="Communicate">

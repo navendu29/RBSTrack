@@ -1,5 +1,7 @@
 package com.example.navendu.rbstrack.fragments;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
@@ -43,9 +45,12 @@ public class ProfileFragment extends Fragment {
     TextView v4;
     TextView v5;
     TextView v6;
+    Context f;
     private RecyclerView recyclerView;
 View v;
 
+String racf;
+String password;
     // private OnFragmentInteractionListener mListener;
 
     public ProfileFragment() {
@@ -65,7 +70,9 @@ View v;
         // Inflate the layout for this fragment
          v= inflater.inflate(R.layout.fragment_profile, container, false);
 
+       //  getActivity().getActionBar().setTitle("PROFILE");
 
+//         getActivity().getIntent();
        v1= v.findViewById(R.id.t1);
 
         v2= v.findViewById(R.id.t2);
@@ -78,17 +85,23 @@ View v;
 
         v6= v.findViewById(R.id.t6);
 
-         final String BASE_URL = "http://192.168.1.7:8081/";
+        f=v.getContext();
+
+        Intent i=  getActivity().getIntent();
+
+         racf=i.getStringExtra("rr");
+
+         password=i.getStringExtra("rrr");
+
+
+        final String BASE_URL = "http://192.168.43.154:8081/";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        String racf="guptnbx";
-        String pass="navendugupta";
-
 apiService api=retrofit.create(apiService.class);
-        Call<Employee> call=api.getProfilehero(racf,pass);
+        Call<Employee> call=api.getProfilehero(racf,password);
         call.enqueue(new Callback<Employee>() {
             @Override
             public void onResponse(Call<Employee> call, Response<Employee> response) {
@@ -100,12 +113,14 @@ apiService api=retrofit.create(apiService.class);
                 //console.log();
 
 
+
+
                 v1.setText(b.getName()+"");
                 v2.setText(b.getRacf()+"");
                 v3.setText(b.getPhoneno()+"");
-              //  v4.setText(b.getLeaves());
-              //  v5.setText(b.getLeavestaken());
-             //   v6.setText(b.getWorkfromhome());
+                v4.setText(b.getLeaves()+"");
+               v5.setText(b.getLeavestaken()+"");
+                v6.setText(b.getWorkfromhome()+"");
 
 
 
@@ -115,7 +130,7 @@ apiService api=retrofit.create(apiService.class);
             public void onFailure(Call<Employee> call, Throwable t) {
 
 
-                Toast.makeText(getContext(), "not connecting sent.",
+                Toast.makeText(f, "not connecting sent.",
                         Toast.LENGTH_LONG).show();
 
             }
