@@ -1,6 +1,7 @@
 package com.example.navendu.rbstrack;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,13 +19,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.navendu.rbstrack.fragments.AboutFragment;
+import com.example.navendu.rbstrack.fragments.AdminFragment;
 import com.example.navendu.rbstrack.fragments.ApplyForLeave;
 import com.example.navendu.rbstrack.fragments.ApplyForWorkFromHome;
 import com.example.navendu.rbstrack.fragments.ContactsFragment;
 import com.example.navendu.rbstrack.fragments.ProfileFragment;
 import com.example.navendu.rbstrack.fragments.ShowPeoplOnLeaves;
+import com.example.navendu.rbstrack.fragments.changepassFragment;
 import com.example.navendu.rbstrack.fragments.emergencyContacts;
 import com.example.navendu.rbstrack.fragments.myabsence;
+import com.example.navendu.rbstrack.fragments.statusfrag;
 
 public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -43,6 +47,8 @@ public class Main2Activity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        //getSupportActionBar().hide();
  /*       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,7 +152,7 @@ public class Main2Activity extends AppCompatActivity
             transaction.commit();
 
 
-        } else if (id == R.id.nav_manage1) {
+        }/* else if (id == R.id.nav_manage1) {
 
 
 
@@ -157,8 +163,8 @@ public class Main2Activity extends AppCompatActivity
             transaction.commit();
 
 
-
-        } else if (id == R.id.nav_manage2) {
+*/
+         else if (id == R.id.nav_manage2) {
 
 
 
@@ -192,6 +198,55 @@ public class Main2Activity extends AppCompatActivity
             transaction.commit();
 
         }
+        else if(id==R.id.navi)
+        {
+
+            Fragment fragment = new statusfrag();
+            FragmentManager manager = getSupportFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.frame, fragment);
+            transaction.commit();
+
+
+        }
+        else if(id==R.id.admin)
+        {
+
+            Fragment fragment = new AdminFragment();
+            FragmentManager manager = getSupportFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.frame, fragment);
+            transaction.commit();
+
+
+        }
+        else if(id==R.id.pass)
+        {
+
+            Fragment fragment = new changepassFragment();
+            FragmentManager manager = getSupportFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(R.id.frame, fragment);
+            transaction.commit();
+
+
+
+        }
+
+
+        else if(id==R.id.logout)
+        {
+
+
+            Intent i = new Intent(getApplicationContext(),MainActivity.class);
+
+
+            startActivity(i);
+            finish();
+        }
+
+
+
         else
         {
             Fragment fragment = new ShowPeoplOnLeaves();
@@ -209,4 +264,5 @@ public class Main2Activity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

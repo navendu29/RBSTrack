@@ -55,24 +55,13 @@ String password;
 
     public ProfileFragment() {
 
-        // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @return A new instance of fragment ProfileFragment.
-     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
          v= inflater.inflate(R.layout.fragment_profile, container, false);
-
-       //  getActivity().getActionBar().setTitle("PROFILE");
-
-//         getActivity().getIntent();
        v1= v.findViewById(R.id.t1);
 
         v2= v.findViewById(R.id.t2);
@@ -92,11 +81,8 @@ String password;
          racf=i.getStringExtra("rr");
 
          password=i.getStringExtra("rrr");
-
-
-        final String BASE_URL = "http://192.168.43.154:8081/";
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(apiService.base_url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -105,21 +91,13 @@ apiService api=retrofit.create(apiService.class);
         call.enqueue(new Callback<Employee>() {
             @Override
             public void onResponse(Call<Employee> call, Response<Employee> response) {
-
-
-
                 Employee b=response.body();
-
-                //console.log();
-
-
-
 
                 v1.setText(b.getName()+"");
                 v2.setText(b.getRacf()+"");
                 v3.setText(b.getPhoneno()+"");
                 v4.setText(b.getLeaves()+"");
-               v5.setText(b.getLeavestaken()+"");
+                v5.setText(b.getLeavestaken()+"");
                 v6.setText(b.getWorkfromhome()+"");
 
 
@@ -130,31 +108,13 @@ apiService api=retrofit.create(apiService.class);
             public void onFailure(Call<Employee> call, Throwable t) {
 
 
-                Toast.makeText(f, "not connecting sent.",
+                Toast.makeText(f, "No Internet Connection",
                         Toast.LENGTH_LONG).show();
 
             }
         });
 
-
-//        ArrayList<Employee> arr=new ArrayList<>();
-//        arr.add(new Employee("navendu","helo","hehkhke","sajgcjab",42,0,0,"contacts","names"));
-//        arr.add(new Employee("akshay","helo","hehkhke","sajgcjab",42,0,0,"contacts","names"));
-//
-//
-//                    recyclerView = v.findViewById(R.id.recyclerView);
-//
-//
-//                    recyclerView.setLayoutManager(new LinearLayoutManager(v.getContext(), LinearLayoutManager.VERTICAL, false));
-//
-//                    ProfileAdapter studentsAdapter = new ProfileAdapter(arr, v.getContext());
-//                    recyclerView.setAdapter(studentsAdapter);
-
-
-
-
-
-                    return v;
+    return v;
                 }
 
 

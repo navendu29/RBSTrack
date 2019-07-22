@@ -1,38 +1,23 @@
 package com.example.navendu.rbstrack.fragments;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.telephony.SmsManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.navendu.rbstrack.Main2Activity;
 import com.example.navendu.rbstrack.R;
-import com.example.navendu.rbstrack.model.Auth;
 import com.example.navendu.rbstrack.model.Contacts;
 import com.example.navendu.rbstrack.model.Employee;
-import com.example.navendu.rbstrack.model.cont;
 import com.example.navendu.rbstrack.services.apiService;
-import com.example.navendu.rbstrack.services.contactadapter;
+import com.example.navendu.rbstrack.Adapters.contactadapter;
 
 import java.util.ArrayList;
 
@@ -69,10 +54,10 @@ public class ContactsFragment extends Fragment {
     EditText e;
     EditText e1;
     ArrayAdapter<String> studentadapter;
-    final String BASE_URL = "http://192.168.43.154:8081/";
+//    final String BASE_URL = "http://192.168.43.154:8081/";
 
     private static final int MY_PERMISSIONS_REQUEST_SEND_SMS = 0;
-View v;
+    View v;
     apiService api;
     public ContactsFragment() {
         // Required empty public constructor
@@ -94,7 +79,7 @@ View v;
         f=v.getContext();
 
          retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(apiService.base_url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -145,20 +130,8 @@ jj=v.getContext();
 
                 }
 
-
-
-                   // hh.setLayoutManager(new LinearLayoutManager(jj, LinearLayoutManager.VERTICAL, false));
-
-
-
-
                     g = new contactadapter(nav,jj);
                     hh.setAdapter(g);
-
-
-
-                //vv.setText(b.getRacf()+"hello"+b.getContactnames()+""+b.getPhoneno());
-
 
             }
 
@@ -166,7 +139,7 @@ jj=v.getContext();
             public void onFailure(Call<Employee> call, Throwable t) {
 
 
-                Toast.makeText(f, "not connecting sent.",
+                Toast.makeText(f, "No Internet Connection",
                         Toast.LENGTH_SHORT).show();
 
             }
@@ -207,45 +180,5 @@ return v;
 
     }
 
-//
-//    protected void sendSMSMessage() {
-//
-//        if (ContextCompat.checkSelfPermission(this.getContext(),
-//                Manifest.permission.SEND_SMS)
-//                != PackageManager.PERMISSION_GRANTED) {
-//            if (ActivityCompat.shouldShowRequestPermissionRationale(this.getActivity(),
-//                    Manifest.permission.SEND_SMS)) {
-//            } else {
-//                ActivityCompat.requestPermissions(this.getActivity(),
-//                        new String[]{Manifest.permission.SEND_SMS},
-//                        MY_PERMISSIONS_REQUEST_SEND_SMS);
-//            }
-//        } else {
-//            SmsManager smsManager = SmsManager.getDefault();
-//            smsManager.sendTextMessage("918447180858", null, "navendu will be on leave today", null, null);
-//            Toast.makeText(getContext(), "SMS sent.",
-//                    Toast.LENGTH_LONG).show();
-//
-//        }
-//    }
-//
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-//        switch (requestCode) {
-//            case MY_PERMISSIONS_REQUEST_SEND_SMS: {
-//                if (grantResults.length > 0
-//                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//                    SmsManager smsManager = SmsManager.getDefault();
-//                    smsManager.sendTextMessage("918447180858", null, "navendu will be on leave today", null, null);
-//                    Toast.makeText(getContext(), "SMS sent.",
-//                            Toast.LENGTH_LONG).show();
-//                } else {
-//                    Toast.makeText(getContext(),
-//                            "SMS faild, please try again.", Toast.LENGTH_LONG).show();
-//                    return;
-//                }
-//            }
-//        }
-//
-//    }
+
 }

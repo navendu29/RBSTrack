@@ -2,22 +2,21 @@ package com.example.navendu.rbstrack.fragments;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.navendu.rbstrack.R;
-import com.example.navendu.rbstrack.model.WorkFromHome;
+import com.example.navendu.rbstrack.model.Contacts;
 import com.example.navendu.rbstrack.model.leaves;
 import com.example.navendu.rbstrack.services.apiService;
+import com.example.navendu.rbstrack.Adapters.contactadapter;
 
 import java.util.ArrayList;
 
@@ -41,6 +40,9 @@ String racf;
 String password;
 TextView t4;
 View v;
+contactadapter cc;
+
+ArrayList<Contacts> pop;
     ArrayList<String>sample1;
 
 ArrayList<String>sample;
@@ -64,13 +66,7 @@ Context jj;
         // Inflate the layout for this fragment
          v= inflater.inflate(R.layout.fragment_myabsence, container, false);
 
-
-     //   getActivity().getActionBar().setTitle("MY ABSENCE");
-
-
         jj=v.getContext();
-        final String BASE_URL = "http://192.168.43.154:8081/";
-
 
         Intent i=  getActivity().getIntent();
 
@@ -88,7 +84,7 @@ Context jj;
 
 
          retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(apiService.base_url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -96,10 +92,7 @@ Context jj;
 
 
 
-        Button sendBtn = (Button) v.findViewById(R.id.m);
 
-        sendBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
 
                 api=retrofit.create(apiService.class);
                 Call<leaves> call=api.getleavedates(racf);
@@ -118,102 +111,45 @@ Context jj;
                         leaves b=response.body();
                         String dd=b.getDate();
 
+                        String aa=b.getReason();
+
+
+                        pop=new ArrayList<Contacts>();
+
                         String[] p=  dd.split(",");
+                        String[] jjj=aa.split(",");
+
+
 
 
 
                         String ans="";
-                        for(int i=0;i<p.length;++i)
+                        for(int i=1;i<p.length;++i)
                         {
                             //
                             // ans+=p[i]+"\n";
 
-                            sample.add(p[i]);
+                            pop.add(new Contacts(p[i],jjj[i]));
 
                         }
 
                         //  t3.setText(ans);
 
-                        studentadapter = new ArrayAdapter<String>(jj,android.R.layout.simple_list_item_1,sample);
-                        hh.setAdapter(studentadapter);
+
+                        cc = new contactadapter(pop,jj);
+                        hh.setAdapter(cc);
 
 
                     }
 
                     @Override
                     public void onFailure(Call<leaves> call, Throwable t) {
-                        Toast.makeText(jj, "not connecting sent.",
+                        Toast.makeText(jj, "No Internet Connection",
                                 Toast.LENGTH_LONG).show();
 
                     }
                 });
 
-
-
-            }});
-
-
-
-
-
-        Button sendBt = (Button) v.findViewById(R.id.n);
-
-        sendBt.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-
-
-
-                api=retrofit.create(apiService.class);
-                sample1 = new ArrayList<String>();
-                Call<WorkFromHome> call1 = api.getwfhdates(racf);
-                call1.enqueue(new Callback<WorkFromHome>() {
-                    @Override
-                    public void onResponse(Call<WorkFromHome> call1, Response<WorkFromHome> response) {
-                        WorkFromHome b = response.body();
-                        String dd = b.getDates();
-
-
-
-
-
-                        t4=v.findViewById(R.id.textView2);
-
-                        t4.setText("wfh taken");
-
-
-                        hh = v.findViewById(R.id.ll1);
-
-                        String[] p = dd.split(",");
-
-                        String ans = "";
-                        for (int i = 0; i < p.length; ++i) {
-                            //          ans+=p[i]+"\n";
-
-                            sample1.add(p[i]);
-
-
-                        }
-
-
-                        studentadapter1 = new ArrayAdapter<String>(jj, android.R.layout.simple_list_item_1, sample1);
-                        hh.setAdapter(studentadapter1);
-
-//                t4.setText(ans);
-
-
-                    }
-
-                    @Override
-                    public void onFailure(Call<WorkFromHome> call1, Throwable t) {
-
-
-                        Toast.makeText(jj, "not connecting sent.",
-                                Toast.LENGTH_LONG).show();
-
-                    }
-                });
-            }
-            });
 
 
 

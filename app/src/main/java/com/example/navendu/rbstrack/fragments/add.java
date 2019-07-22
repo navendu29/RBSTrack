@@ -22,13 +22,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class add extends AppCompatActivity {
-
-
-
     EditText e;
     EditText e1;
-    final String BASE_URL = "http://192.168.43.154:8081/";
-    Retrofit retrofit;
+   Retrofit retrofit;
     apiService api;
     String racf;
     @Override
@@ -37,24 +33,13 @@ public class add extends AppCompatActivity {
         setContentView(R.layout.activity_add);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-
-
-
-
-
-
+        getSupportActionBar().hide();
         Button sendBtn = (Button) findViewById(R.id.rr);
-
         sendBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                //         sendSMSMessage();
-
-
 
                 retrofit = new Retrofit.Builder()
-                        .baseUrl(BASE_URL)
+                        .baseUrl(apiService.base_url)
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
                 e=findViewById(R.id.editText1);
@@ -62,10 +47,6 @@ public class add extends AppCompatActivity {
 
                 String str1=e.getText().toString()+"";
                 String str2=e1.getText().toString()+"";
-
-//                Toast.makeText(v.getContext(), "success credentials."+e.getText().toString()+""+e1.getText().toString(),
-                //                      Toast.LENGTH_LONG).show();
-
 
                 Intent i=getIntent();
 
@@ -87,52 +68,29 @@ public class add extends AppCompatActivity {
                         if(ss.equals("true"))
                         {
 
-                            Toast.makeText(getApplicationContext(), "success credentials.",
+                            Toast.makeText(getApplicationContext(), "contact added",
                                     Toast.LENGTH_LONG).show();
-
-                            //  studentadapter.notifyDataSetChanged();
-
+                            e.setText("");
+                            e1.setText("");
 
                         }
                         else
                         {           Toast.makeText(getApplicationContext(), "invalid credentials.",
                                 Toast.LENGTH_LONG).show();
 
-
                         }
-
-
-                        //console.log();
-
-//  v4.setText(b.getLeaves());
-                        //  v5.setText(b.getLeavestaken());
-                        //   v6.setText(b.getWorkfromhome());
-
-
 
                     }
 
                     @Override
                     public void onFailure(Call<Auth> call1, Throwable t) {
-
-
                         Toast.makeText(getApplicationContext(), "invalid credentials or net is not working",
                                 Toast.LENGTH_SHORT).show();
-
                     }
                 });
 
             }
         });
-
-
-
-
-
-
-
-
-
     }
 
 }

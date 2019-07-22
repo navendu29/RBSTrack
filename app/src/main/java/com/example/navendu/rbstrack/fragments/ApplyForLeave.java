@@ -1,43 +1,30 @@
 package com.example.navendu.rbstrack.fragments;
-import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.telephony.SmsManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
-import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.navendu.rbstrack.R;
 import com.example.navendu.rbstrack.model.Auth;
 import com.example.navendu.rbstrack.model.Employee;
-import com.example.navendu.rbstrack.model.leaves;
-import com.example.navendu.rbstrack.services.Main3Activity;
 import com.example.navendu.rbstrack.services.apiService;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import sun.bob.mcalendarview.MarkStyle;
-import sun.bob.mcalendarview.listeners.OnDateClickListener;
-import sun.bob.mcalendarview.vo.DateData;
 
 public class ApplyForLeave extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -50,11 +37,14 @@ Button b;
 Button j;
 String racf;
 String password;
+Spinner mySpinner;
+String text;
 apiService api;
     private static final int MY_PERMISSIONS_REQUEST_SEND_SMS = 0;
 
     View v;
 
+Spinner dropdown;
     ArrayList<String>pp;
     // TODO: Rename and change types of parameters
     public ApplyForLeave() {
@@ -68,6 +58,15 @@ apiService api;
         v= inflater.inflate(R.layout.fragment_apply_for_leave, container, false);
 
 
+
+ dropdown = v.findViewById(R.id.spp);
+//create a list of items for the spinner.
+        String[] items = new String[]{"Sick Leave", "Travel Leave", "WFH"};
+//create an adapter to describe how the items are displayed, adapters are used in several places in android.
+//There are multiple variations of this, but this is the basic variant.
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(v.getContext(), android.R.layout.simple_spinner_dropdown_item, items);
+//set the spinners adapter to the previously created one.
+        dropdown.setAdapter(adapter);
 
       //  getActivity().getActionBar().setTitle("LEAVES");
 
@@ -98,10 +97,10 @@ apiService api;
 
 
 
-        final String BASE_URL = "http://192.168.43.81:8081/";
+      //  final String BASE_URL = "http://192.168.43.154:8081/";
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(apiService.base_url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -176,12 +175,17 @@ apiService api;
 
 //                Log.i("hello",du);
 
-                EditText e=v.findViewById(R.id.editText4);
-
-                String h=e.getText().toString()+"";
+//                EditText e=v.findViewById(R.id.editText4);
 
 
-                Call<Auth> call1=api.updatingleave(racf,dy+"",h+"");
+
+                mySpinner=v.findViewById(R.id.spp);
+                 text = mySpinner.getSelectedItem().toString();
+
+                //String h=e.getText().toString()+"";
+
+
+                Call<Auth> call1=api.updatingleave(racf,dy+"",text+"");
                 call1.enqueue(new Callback<Auth>() {
                     @Override
                     public void onResponse(Call<Auth> call1, Response<Auth> response) {
@@ -195,14 +199,14 @@ apiService api;
                         if(ss.equals("true"))
                         {
 
-                            Toast.makeText(v.getContext(), "success credentials.",
+                            Toast.makeText(v.getContext(), "leave saved",
                                     Toast.LENGTH_LONG).show();
 
 
 
                         }
                         else
-                        {           Toast.makeText(v.getContext(), "invalid credentials.",
+                        {           Toast.makeText(v.getContext(), "can't apply",
                                 Toast.LENGTH_LONG).show();
 
 
@@ -216,23 +220,13 @@ apiService api;
                     public void onFailure(Call<Auth> call1, Throwable t) {
 
 
-                        Toast.makeText(v.getContext(), "invalid credentials or net is not working",
+                        Toast.makeText(v.getContext(), "No Internet Connection",
                                 Toast.LENGTH_SHORT).show();
 
                     }
                 });
 
-            }
-        });
 
-
-
-
-
-        j=v.findViewById(R.id.ppp);
-        j.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                //         sendSMSMessage();
 
                 Call<Employee> call=api.getProfilehero(racf,password);
 
@@ -253,7 +247,7 @@ apiService api;
 
                         String[] sp=names.split(",");
 
-                       names= names.replace(",",";");
+                        names= names.replace(",",";");
 //                        for(int i=0;i<sp.length;++i)
 //                        {
 //
@@ -264,7 +258,7 @@ apiService api;
 //                        }
 
                         Intent smsIntent = new Intent(Intent.ACTION_SENDTO,Uri.parse("smsto:"+names));
-                        smsIntent.putExtra("sms_body", racf+" willl be on leave on"+dy);
+                        smsIntent.putExtra("sms_body", racf+" willl be on"+text+ "on "+dy);
                         startActivity(smsIntent);
 
 
@@ -285,7 +279,7 @@ apiService api;
                     public void onFailure(Call<Employee> call, Throwable t) {
 
 
-                        Toast.makeText(getContext(), "not connecting sent.",
+                        Toast.makeText(getContext(), "No Internet Connection",
                                 Toast.LENGTH_SHORT).show();
 
                     }
@@ -296,22 +290,8 @@ apiService api;
         });
 
 
-
-
         return v;
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

@@ -1,4 +1,4 @@
-package com.example.navendu.rbstrack.services;
+package com.example.navendu.rbstrack;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,10 +7,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.navendu.rbstrack.R;
 import com.example.navendu.rbstrack.model.Datesss;
-import com.example.navendu.rbstrack.model.Employee;
 import com.example.navendu.rbstrack.model.peopleonleave;
+import com.example.navendu.rbstrack.services.apiService;
+import com.example.navendu.rbstrack.Adapters.customadapter;
 
 import java.util.ArrayList;
 
@@ -33,15 +33,15 @@ public class Main3Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-
+        getSupportActionBar().hide();
         Intent i=getIntent();
 
         String datek=i.getStringExtra("hehe");
 
-    kk=findViewById(R.id.tty);
+    //kk=findViewById(R.id.tty);
 
 
-    kk.setText(datek);
+    //kk.setText(datek);
 
       //  this.getActionBar().setTitle("DETAILS");
 
@@ -54,9 +54,9 @@ public class Main3Activity extends AppCompatActivity {
 
 
 
-        final String BASE_URL = "http://192.168.43.154:8081/";
+//        final String BASE_URL = "http://192.168.43.154:8081/";
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(apiService.base_url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -100,7 +100,7 @@ public class Main3Activity extends AppCompatActivity {
             public void onFailure(Call<Datesss> call, Throwable t) {
 
 
-                Toast.makeText(getApplicationContext(), "not connecting sent.",
+                Toast.makeText(getApplicationContext(), "No Internet Connection",
                         Toast.LENGTH_LONG).show();
 
             }

@@ -49,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        final String BASE_URL = "http://192.168.43.154:8081/";
+     //   final String BASE_URL = "http://192.168.43.154:8081/";
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(apiService.base_url)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -109,11 +109,6 @@ public class MainActivity extends AppCompatActivity {
              }
 
 
-                //console.log();
-
-//  v4.setText(b.getLeaves());
-                //  v5.setText(b.getLeavestaken());
-                //   v6.setText(b.getWorkfromhome());
 
 
 

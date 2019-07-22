@@ -25,11 +25,14 @@
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".RecyclerviewonPeopleonleave" />
-        <activity android:name=".services.Main3Activity"></activity>
+        <activity android:name=".Main3Activity" />
         <activity
             android:name=".fragments.add"
             android:label="@string/title_activity_add"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Main4Activity"
+            android:label="@string/title_activity_main4"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

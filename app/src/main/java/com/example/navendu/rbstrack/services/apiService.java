@@ -25,7 +25,7 @@ public interface apiService {
 
 
 
-    String base_url= "http://192.168.43.154:8081/";
+  public  String base_url= "http://192.168.43.81:8081/";
 
     @GET("getprofile")
     Call<Employee> getProfilehero(@Query("racf") String id,@Query("password") String pass);
@@ -50,6 +50,29 @@ public interface apiService {
 
     @GET("updateonleave")
     Call<Auth> updatingleave(@Query("racf") String d,@Query("date") String dd,@Query("reason") String ddd);
+
+    @GET("updatestatus")
+    Call<Auth> updatestatus(@Query("racf") String d,@Query("status") String dd);
+
+
+
+    @GET("getstatus")
+    Call<Auth> getstatus(@Query("racf") String d);
+
+    @GET("admin")
+    Call<Auth> getadminauth(@Query("id") String d,@Query("pass") String dd);
+
+
+    @GET("delemployee")
+    Call<Auth> getdel(@Query("racf") String d);
+
+    @GET("addemployee")
+    Call<Auth> getadd(@Query("racf") String a,@Query("name") String b,@Query("phoneno") String c,@Query("password") String d,@Query("leaves") String e,@Query("contacts") String f,@Query("contactnames") String g);
+
+
+
+  @GET("updatepassword")
+  Call<Auth> getd(@Query("racf") String a,@Query("password") String b);
 
 
 }

@@ -16,27 +16,41 @@
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Add contacts" />
+            android:title="Add Contacts" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Apply for Leave" />
-        <item
-            android:id="@+id/nav_manage1"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Work from home" />
+            android:title="Notify for Leave" />
+
 
 
         <item
             android:id="@+id/nav_manage2"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="show people on leave/WFH" />
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Show People on Leave/WFH" />
 
 
         <item
             android:id="@+id/nav"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="MY Absence" />
+
+
+        <item
+            android:id="@+id/navi"
             android:icon="@drawable/ic_menu_manage"
-            android:title="MY absence" />
+            android:title="Status" />
+
+        <item
+            android:id="@+id/admin"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Admin" />
+
+
+        <item
+            android:id="@+id/pass"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Change Password" />
 
     </group>
 
@@ -47,7 +61,18 @@
                 android:icon="@drawable/ic_menu_share"
                 android:title="Contacts" />
 
+
+
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Logout" />
+
+
+
+
         </menu>
+
     </item>
 
 </menu>

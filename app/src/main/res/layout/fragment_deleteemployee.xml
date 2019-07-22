@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+android:background="@drawable/nk"
+
+    android:layout_height="match_parent"
+    tools:context="com.example.navendu.rbstrack.fragments.deleteemployee">
+
+
+    <EditText
+        android:id="@+id/e1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+
+
+        android:layout_above="@+id/pp"
+        android:layout_alignLeft="@+id/pp"
+        android:layout_alignStart="@+id/pp"
+        android:layout_marginBottom="41dp"
+        android:hint="Racf ID"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:textStyle="italic" />
+
+
+    <Button
+        android:id="@+id/pp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="183dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Delete"
+        android:textAllCaps="true"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textSize="20dp"
+        android:textStyle="italic" />
+
+
+
+
+</RelativeLayout>

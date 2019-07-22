@@ -1,37 +1,27 @@
 package com.example.navendu.rbstrack.fragments;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
-import android.telephony.SmsManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.navendu.rbstrack.MainActivity;
 import com.example.navendu.rbstrack.R;
 import com.example.navendu.rbstrack.model.Auth;
 import com.example.navendu.rbstrack.model.Employee;
-import com.example.navendu.rbstrack.model.WorkFromHome;
-import com.example.navendu.rbstrack.model.leaves;
-import com.example.navendu.rbstrack.services.Main3Activity;
 import com.example.navendu.rbstrack.services.apiService;
 
-import java.io.Console;
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -39,9 +29,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import sun.bob.mcalendarview.MarkStyle;
-import sun.bob.mcalendarview.listeners.OnDateClickListener;
-import sun.bob.mcalendarview.vo.DateData;
 
 public class ApplyForWorkFromHome extends Fragment {
     // TODO: Rename parameter arguments, choose names that match

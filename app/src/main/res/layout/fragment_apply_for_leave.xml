@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/nk"
     tools:context="com.example.navendu.rbstrack.fragments.ApplyForLeave">
 
 
@@ -13,16 +13,20 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
         android:layout_height="0dp"
         android:background="#ffffff"
-        android:layout_margin="5dp"
-        android:layout_weight="5"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_weight="4"
+        android:layout_marginBottom="5dp"
         android:id="@+id/linearLayout">
 
 
         <CalendarView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             android:id="@+id/call"/>
 
 
@@ -30,51 +34,62 @@
     </LinearLayout>
 
 
+
+    
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="0.5"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        >
+
+<TextView
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+
+    android:layout_marginLeft="10dp"
+
+android:layout_weight="1"
+    android:text="REASON"
+    android:textSize="20dp"
+    android:textAllCaps="true"
+    android:textStyle="bold"
+    android:textColor="#ffffff"
+    android:paddingTop="10dp"
+    />
 
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            <Spinner
+                android:id="@+id/spp"
 
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_alignLeft="@+id/linearLayout2"
-                android:layout_alignStart="@+id/linearLayout2"
-                android:layout_alignTop="@+id/editText4"
-                android:layout_marginLeft="16dp"
-                android:layout_weight="1"
-                android:layout_marginStart="16dp"
-                android:text="REASon"
-                android:textAllCaps="true"
-                android:textColor="#ffffff"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/editText4"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
                 android:layout_weight="2"
-                android:layout_alignEnd="@+id/linearLayout2"
-                android:layout_alignRight="@+id/linearLayout2"
-                android:layout_below="@+id/linearLayout2"
-                android:layout_marginEnd="23dp"
-                android:layout_marginRight="23dp"
-                android:layout_marginTop="14dp" />
+
+                android:layout_marginRight="10dp"
+
+                android:background="@drawable/nk"
+
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
 
 
-        </LinearLayout>
 
+
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+
+                >
+
+
+            </Spinner>
+
+
+
+        
     </LinearLayout>
+    
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -96,25 +111,11 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
-        android:layout_margin="5dp"
-        android:text="UPDATE" />
+    android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
+        android:text="NOTIFY" />
 
-    <Button
-        android:id="@+id/ppp"
-        android:layout_alignEnd="@+id/editText4"
-        android:layout_alignRight="@+id/editText4"
-        style="@style/Widget.AppCompat.Button.Colored"
 
-        android:layout_margin="5dp"
-
-        android:layout_marginBottom="20dp"
-
-        android:layout_marginLeft="10dp"
-        android:layout_width="150dp"
-        android:layout_height="50dp"        android:layout_alignTop="@+id/buttonn"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="notifypeople" />
 
 
 </LinearLayout>
